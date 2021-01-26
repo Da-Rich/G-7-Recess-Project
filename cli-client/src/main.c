@@ -109,7 +109,7 @@ int process_command(char* command){
 			}else if(strlen(&gender) != 0 && strlen(category) != 0 ){
 				/*input for single parent:makesure to check input format */
 				if(initiate_data_transfer("1", client_sock) < 0){
-						goto ending;
+						goto clean_up;
 				}
 				
 				size_t sent = send(client_sock, command+11, strlen(command)+11, 0);				
@@ -134,13 +134,14 @@ int process_command(char* command){
 				printf("Error parsing command\n");
 				print_instructions();
 			}
-			memset(name,0,30);
-			memset(date,0,8);
-			memset(&gender,0,1);
-			memset(category,0,3);
-			free(name);
-			free(date);
-			free(category);
+			clean_up:
+				memset(name,0,30);
+				memset(date,0,8);
+				memset(&gender,0,1);
+				memset(category,0,3);
+				free(name);
+				free(date);
+				free(category);
 		}else if(strncmp(command,"Check_status",12) == 0){
 		}else if(strncmp(command,"Done",4) == 0){
 			return 1;
