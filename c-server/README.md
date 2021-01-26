@@ -6,6 +6,7 @@
 
 ##Building the c-server program
 $ mkdir build
+
 $ make
 
 ## Running the server program
@@ -13,6 +14,8 @@ $ ./main
 
 ## To Recompile and rerun
 $ make clean
+
 $ make
+
 $ ./main
 

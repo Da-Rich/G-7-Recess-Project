@@ -1,7 +1,0 @@
-Addpatient kayondo, 99999999, m, +ve
-Addpatient kayondo, 99999999, m, +ve
-Addpatient kayondo, 99999999, m, +ve
-Addpatient kayondo, 99999999, m, +vs
-
-
-
