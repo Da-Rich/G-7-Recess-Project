@@ -16,19 +16,42 @@ int accept_connection(int server_sock){
 
 void handle_client(int client_sock){
 	char *buffer = (char*)malloc(MAX_BUF_SIZE);
-
-	ssize_t recv_size = recv(client_sock, buffer, MAX_BUF_SIZE, 0);
+	memset(buffer,0,MAX_BUF_SIZE);
+	ssize_t recv_size = recv(client_sock, buffer, 1, 0);
 
 	if(recv_size < 0){
 		//Error: TODO
 	}
-
-	
-	ssize_t sent_size = send(client_sock, buffer, recv_size, 0);
+	ssize_t sent_size = send(client_sock, "1", 1, 0);
 	if(sent_size < 0){
-		//Error: TODO
+		perror("send confirmation");
+		goto ending;
 	}
 
+	int option =(int) (buffer[0]-'0');
+	switch(option){
+		case 1: { /* single patient data receive */
+				recv_size = recv(client_sock, buffer, MAX_BUF_SIZE, 0);
+				if(recv_size > 0){
+					printf("Received from client: %s\n",buffer);
+					sent_size = send(client_sock, "1", 1, 0);
+				}else{
+					//error
+				}
+				break;
+			}
+		case 2:{/* file receive */
+			       while((recv_size = recv(client_sock, buffer, MAX_BUF_SIZE, 0)) > 0){
+				       printf("Received from client: \n");
+				       printf("%s",buffer);
+				       sent_size = send(client_sock, "1", 1, 0);
+			       }
+			       break;
+		       }
+	}
+ending:
+	memset(buffer,0,MAX_BUF_SIZE);
+	free(buffer);
 	close(client_sock);
 }
 
