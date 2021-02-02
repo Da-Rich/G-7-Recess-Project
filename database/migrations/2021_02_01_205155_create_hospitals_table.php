@@ -14,7 +14,9 @@ class CreateHospitalsTable extends Migration
     public function up()
     {
         Schema::create('hospitals', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('hospital_id');
+            $table->string('hospital_name');
+            $table->string('hospital_category');
             $table->timestamps();
         });
     }

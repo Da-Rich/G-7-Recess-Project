@@ -161,10 +161,7 @@
                                 <div class="collapse navbar-collapse" id="navigation">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="search-bar input-group">
-                                            <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                                                <span class="d-lg-none d-md-block">{{ __('Search') }}</span>
-                                            </button>
-                                        </li>
+
                                         <li class="dropdown nav-item">
                                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                                 <div class="notification d-none d-lg-block d-xl-block"></div>

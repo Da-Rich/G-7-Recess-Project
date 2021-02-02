@@ -1,4 +1,4 @@
-{{-- @extends('layouts.app', ['page' => __('Icons'), 'pageSlug' => 'icons'])
+@extends('layouts.app', ['page' => __('Icons'), 'pageSlug' => 'icons'])
 
 @section('content')
 <div class="row">
@@ -617,4 +617,4 @@
       </div>
     </div>
   </div>
-@endsection --}}
+@endsection

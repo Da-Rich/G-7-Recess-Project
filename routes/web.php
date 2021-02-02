@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\OfficersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +65,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+Route::get('/registerOfficer',[OfficersController::class, 'index'] )->name('registerOfficer');
+
+
+
+Route::post('/registerOfficer',[OfficersController::class, 'store'] );
