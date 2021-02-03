@@ -47,3 +47,5 @@ Route::get('/registerHospital',[App\Http\Controllers\HospitalsController::class,
 Route::post('/registerOfficer',[OfficersController::class, 'store'] );
 Route::post('/registerDonation',[App\Http\Controllers\DonationsController::class, 'store']);
 Route::post('/registerHospital',[App\Http\Controllers\HospitalsController::class,'store']);
+
+Route::get('/officers',[OfficersController::class, 'show'] );

@@ -11,7 +11,7 @@
 
             <div class="form-group">
                 <label>{{ __('Officer Name') }}</label>
-                <input type="text" name="office_name" class="form-control" placeholder="{{ __('Officer Name') }}" value="" required>
+                <input type="text" name="officer_name" class="form-control" placeholder="{{ __('Officer Name') }}" value="" required>
 
             </div>
 
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label>{{ __('Officer Contact') }}</label>
-                <input type="text" name="Email" class="form-control" placeholder="{{ __('example@here.com') }}" value="" required>
+                <input type="text" name="email" class="form-control" placeholder="{{ __('example@here.com') }}" value="" required>
             </div>
         </div>
         <div class="card-footer">
