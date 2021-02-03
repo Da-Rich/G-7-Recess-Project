@@ -33,7 +33,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('user.index')  }}">
+                            <a href="{{ route('registerDonation')  }}">
                                 <i class="tim-icons icon-coins"></i>
                                 <p>{{ __('Donnation') }}</p>
                             </a>
@@ -42,6 +42,12 @@
                             <a href="{{ route('registerOfficer')  }}">
                                 <i class="tim-icons icon-single-02"></i>
                                 <p>{{ __('Health Officer') }}</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('registerHospital')  }}">
+                                <i class="tim-icons icon-bank"></i>
+                                <p>{{ __('Hospital') }}</p>
                             </a>
                         </li>
                         {{-- <li @if ($pageSlug ?? '' == 'users') class="active " @endif>

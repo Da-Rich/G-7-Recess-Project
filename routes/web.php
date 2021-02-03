@@ -13,33 +13,6 @@ use App\Http\Controllers\OfficersController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashdoard');
-// });
-
-// Route::get('about', function(){
-//   return view('pages.about');
-// });
-
-// Route::get('patients', function(){
-//   return view('patients');
-// });
-
-// Route::get('officers', function(){
-//   return view('officers');
-// });
-
-// Route::get('register', function(){
-//   return view('register');
-// });
-
-// Route::get('donations',function(){
-//   return view('donations');
-// });
-
-// Route::get('payments', function(){
-//   return view('payments');
-// });
 
 Auth::routes();
 
@@ -66,7 +39,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/registerOfficer',[OfficersController::class, 'index'] )->name('registerOfficer');
+Route::get('/registerDonation',[App\Http\Controllers\DonationsController::class, 'index'] )->name('registerDonation');
+Route::get('/registerHospital',[App\Http\Controllers\HospitalsController::class,'index'])->name('registerHospital');
 
 
 
 Route::post('/registerOfficer',[OfficersController::class, 'store'] );
+Route::post('/registerDonation',[App\Http\Controllers\DonationsController::class, 'store']);
+Route::post('/registerHospital',[App\Http\Controllers\HospitalsController::class,'store']);
