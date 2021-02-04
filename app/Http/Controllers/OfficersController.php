@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Officer;
 
+use App\Models\Hospital;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -54,9 +56,31 @@ class OfficersController extends Controller
     public function show(){
          //$officers =  DB::table('officers')->get();
          $officers = Officer::all();
+         //print_r($this->get_hospital($officers));
+          //echo $officers[0]->username;
+         //dd( $this->get_hospital($officers));
+        //dd($officers);
+        return view('tables.officers', compact('officers',$this->replace_hospital_id_with_name($officers)));
+        //return (array)$officers;
 
-        return view('tables.officers', compact('officers',$officers));
-        return (array)$officers;
+    }
+
+    public function replace_hospital_id_with_name($my_array){
+            $final = array();
+
+          $hospitals = Hospital::all();
+            foreach($my_array as $arr){
+                $hospital_ID = $arr['hospital_id'];
+                //echo $hospital_ID;
+                foreach($hospitals as $hospital){
+                    if($hospital['hospital_id']==$hospital_ID){
+                        $arr['hospital_name'] = $hospital['hospital_name'];
+                        array_push($final,$arr);
+                        //echo "\nIts".$hospital['hospital_name']." ===".$hospital_ID;
+                    }
+                }
+            }
+            return $final;
 
     }
     public function best_hospital(){

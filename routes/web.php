@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OfficersController;
+use ConsoleTVs\Charts\ChartsController ;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,8 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/registerOfficer',[OfficersController::class, 'index'] )->name('registerOfficer');
 Route::get('/registerDonation',[App\Http\Controllers\DonationsController::class, 'index'] )->name('registerDonation');
 Route::get('/registerHospital',[App\Http\Controllers\HospitalsController::class,'index'])->name('registerHospital');
-
-
+Route::get('/charts', [App\Http\Controllers\DonationsController::class,'chart'])->name('charts');
+Route::get('/charts_months',[App\Http\Controllers\DonationsController::class,'charts_months'])->name('charts_months');
 
 Route::post('/registerOfficer',[OfficersController::class, 'store'] );
 Route::post('/registerDonation',[App\Http\Controllers\DonationsController::class, 'store']);
@@ -50,3 +51,5 @@ Route::post('/registerHospital',[App\Http\Controllers\HospitalsController::class
 
 Route::get('/officers',[OfficersController::class, 'show'] );
 Route::get('/officer_table',[OfficersController::class,'show']);
+
+

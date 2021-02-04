@@ -38,7 +38,7 @@
                   {{ $officer['job_role']}}
                 </td>
                 <td>
-
+                    {{$officer['hospital_name']}}
                 </td>
                 <td class="text-center">
                   {{ $officer['salary']}}

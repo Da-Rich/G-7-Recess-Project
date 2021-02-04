@@ -18,13 +18,13 @@
                 </a>
             </li>
             <li>
-                <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
+                <a data-toggle="collapse" href="#register" aria-expanded="false">
                     <i class="tim-icons icon-pencil" ></i>
                     <span class="nav-link-text" >{{ __('Register') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
-                <div class="collapse show" id="laravel-examples">
+                <div class="collapse show" id="register">
                     <ul class="nav pl-4">
                         <li>
                             <a href="{{ route('profile.edit')  }}">
@@ -50,16 +50,51 @@
                                 <p>{{ __('Hospital') }}</p>
                             </a>
                         </li>
-                        {{-- <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
-                            <a href="{{ route('user.index')  }}">
-                                <i class="tim-icons icon-coins"></i>
-                                <p>{{ __('Hospital') }}</p>
-                            </a>
-                        </li> --}}
 
                     </ul>
                 </div>
             </li>
+{{--  --}}
+<li>
+    <a data-toggle="collapse" href="#graphs" aria-expanded="false">
+        <i class="tim-icons icon-chart-bar-32" ></i>
+        <span class="nav-link-text" >{{ __('Graphs') }}</span>
+        <b class="caret mt-1"></b>
+    </a>
+
+    <div class="collapse show" id="graphs">
+        <ul class="nav pl-4">
+            <li>
+                <a href="{{ route('profile.edit')  }}">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>{{ __('Donations Graphs') }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('registerDonation')  }}">
+                    <i class="tim-icons icon-coins"></i>
+                    <p>{{ __('Hierarchy') }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('registerOfficer')  }}">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>{{ __('Enrollment Change') }}</p>
+                </a>
+            </li>
+
+            {{-- <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
+                <a href="{{ route('user.index')  }}">
+                    <i class="tim-icons icon-coins"></i>
+                    <p>{{ __('Hospital') }}</p>
+                </a>
+            </li> --}}
+
+        </ul>
+    </div>
+</li>
+{{--  --}}
+
             <li>
                 <a href="{{ route('pages.icons') }}">
                     <i class="tim-icons icon-atom"></i>
@@ -67,7 +102,7 @@
                 </a>
             </li>
              <li>
-                <a href="{{ route('pages.maps') }}">
+                <a href="{{ route('charts') }}">
                     <i class="tim-icons icon-pin"></i>
                     <p>{{ __('Maps') }}</p>
                 </a>

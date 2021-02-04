@@ -24,4 +24,10 @@ class DonationsController extends Controller
         ]);
         return "Success";
     }
+    public function chart(Request $request){
+        return view('charts.donations_chart');
+    }
+    public function charts_months(Request $request){
+        return view('charts.donations_months_chart');
+    }
 }

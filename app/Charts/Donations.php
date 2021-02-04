@@ -7,7 +7,7 @@ namespace App\Charts;
 use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class Donations extends BaseChart
 {
     /**
@@ -17,9 +17,27 @@ class Donations extends BaseChart
      */
     public function handler(Request $request): Chartisan
     {
+        $donations = DB::table('donations')->get();
+
         return Chartisan::build()
-            ->labels(['First', 'Second', 'Third'])
-            ->dataset('Sample', [1, 2, 3])
-            ->dataset('Sample 2', [3, 2, 1]);
+            ->labels($this->donors_names($donations))
+            ->dataset('gee', $this->donation_amount($donations));
     }
+
+
+public function donors_names($donations_array){
+    $donors = array();
+    foreach($donations_array as $donation){
+        array_push($donors,$donation->donor_name);
+    }
+    //print_r($donors);
+    return  $donors;
+}
+public function donation_amount($donations_array){
+    $amount = array();
+    foreach($donations_array as $donation){
+        array_push($amount,$donation->amount);
+    }
+    return $amount;
+}
 }
