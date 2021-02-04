@@ -9,17 +9,17 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table tablesorter " id="">
+          <table class="table tablesorter table-stripped" id="">
             <thead class=" text-primary">
               <tr>
                 <th>
                   Name
                 </th>
                 <th>
-                  Country
+                  Category
                 </th>
                 <th>
-                  City
+                  Hospital
                 </th>
                 <th class="text-center">
                   Salary
@@ -27,21 +27,25 @@
               </tr>
             </thead>
             <tbody>
+               @foreach ($officers as $officer )
+
+
               <tr>
                 <td>
-                  Dakota Rice
+                  {{  $officer['office_name'] }}
                 </td>
                 <td>
-                  Niger
+                  {{ $officer['job_role']}}
                 </td>
                 <td>
-                  Oud-Turnhout
+
                 </td>
                 <td class="text-center">
-                  $36,738
+                  {{ $officer['salary']}}
                 </td>
               </tr>
-              <tr>
+              @endforeach
+              {{-- <tr>
                 <td>
                   Minerva Hooper
                 </td>
@@ -124,7 +128,7 @@
                 <td class="text-center">
                   $98,615
                 </td>
-              </tr>
+              </tr> --}}
             </tbody>
           </table>
         </div>
@@ -139,7 +143,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table tablesorter " id="">
+          <table class="table tablesorter" id="">
             <thead class=" text-primary">
               <tr>
                 <th>

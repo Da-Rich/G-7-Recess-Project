@@ -49,3 +49,4 @@ Route::post('/registerDonation',[App\Http\Controllers\DonationsController::class
 Route::post('/registerHospital',[App\Http\Controllers\HospitalsController::class,'store']);
 
 Route::get('/officers',[OfficersController::class, 'show'] );
+Route::get('/officer_table',[OfficersController::class,'show']);

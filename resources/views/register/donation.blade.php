@@ -17,7 +17,7 @@
 
             <div class="form-group">
                 <label>{{ __('Amount(UGX)') }}</label>
-                <input type="text" name="donor_amount" class="form-control" placeholder="{{ __('UGX 1000000') }}" value="" required>
+                <input type="text" name="amount" class="form-control" placeholder="{{ __('UGX 1000000') }}" value="" required>
 
             </div>
             <div class="form-group">

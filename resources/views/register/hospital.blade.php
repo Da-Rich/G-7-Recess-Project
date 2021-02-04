@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h5 class="title">{{ __('Register Hospital') }}</h5>
+        <h1 class="title">{{ __('Register Hospital') }}</h1>
     </div>
     <form method="post" action="{{ route('registerHospital') }}" autocomplete="off">
         <div class="card-body">

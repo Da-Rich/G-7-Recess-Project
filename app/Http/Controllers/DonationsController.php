@@ -15,6 +15,13 @@ class DonationsController extends Controller
         return view('register.donation');
     }
     public function store(Request $request){
-        dd($request);
+
+        //dd($request);
+        DB::table('donations')->insert([
+            'donor_name' =>$request->donor_name,
+            'date' => $request->date,
+            'amount' => $request->amount
+        ]);
+        return "Success";
     }
 }
