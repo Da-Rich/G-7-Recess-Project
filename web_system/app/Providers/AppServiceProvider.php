@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Providers;
-
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator;
 use ConsoleTVs\Charts\Registrar as Charts;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,12 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Charts $charts)
     {
-        //
-        Paginator::useBootstrap();
         $charts->register([
-            \App\Charts\DonationsChart::class,
-            \App\Charts\MonthsChart::class
+            \App\Charts\Donations::class,
+            \App\Charts\DonationsMonths::class
         ]);
-
     }
 }

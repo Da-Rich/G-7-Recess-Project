@@ -1,160 +1,101 @@
-@extends('layouts.app')
+@extends('layouts.app', ['class' => 'register-page', 'contentClass' => 'register-page'])
 
 @section('content')
-<div class="container">
-    <style>
-        .card-header{
-            background:#1c478e !important;
-            color:#ffff;
-            font-weight: 800 !important;
-         
-        }
-        .col-md-6.offset-md-4{
-            display: flex !important;
-            flex-direction: column !important;
-            flex:1 !important;
-        }
-        button.btn.btn-primary{
-            background:#1c478e !important;
-            color: #fff !important;
-        }
-        
-        .register{
-            display: flex !important;
-            flex-wrap: wrap;
-        }
-        .image{
-            object-fit: contain;
-            width: 60%;
-            height: auto;
-            flex: 0.1;
-        }
-        .register__form{
-            flex: 0.9 !important;
-            width: 100% !important;
-            height: 100vh;
-        }
-        @media(max-width:965px){
-            .register{
-                display: flex !important;
-                flex-direction: column !important;
-            }
-            .register__form, .image{
-                flex:1 !important;
-                object-fit:contain !important;
-                width:100%  !important;
-
-            }
-            .register__form{
-                z-index: 10;
-            }
-            .image{
-                margin-bottom: -250px;
-                z-index: 1;
-            }
-        }
-    </style>
-    <div class="register">
-            <img src="
-            https://images.unsplash.com/photo-1584707824245-f67bad2c62d5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzV8fGNvdmlkfGV
-            ufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
-            " 
-            alt="not found" class="image ">
-    
-        <div class="register__form ">
-            <div>
-                <div class="card">
-                    <div class="card-header text-center "
-                    >{{ __('Register') }}</div>
-    
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
-    
-                            <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-    
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="email"
-                                     type="email" class="form-control @error('email') is-invalid @enderror"
-                                      name="email" value="{{ old('email') }}" required autocomplete="email">
-    
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-        
-                            <div class="form-group row">
-                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('SelectRole') }}</label>
-                      
-                                <div class="col-md-6">
-                                    <select name="role" id="" class="form-control">
-                                        <option value="Administrator">Admin</option>
-                                        <option value="Director">Director</option>
-                                    </select>
-                                    
-                                    @error('role')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-
-                                </div>
-                            </div>
-                    
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-    
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                           
-                            <div class="form-group row">
-                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-    
-                                <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                </div>
-                            </div>
-    
-                            <div class="form-group row mb-0 ">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary ">
-                                        {{ __('Register') }}
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+    <div class="row">
+        <div class="col-md-5 ml-auto">
+            <div class="info-area info-horizontal mt-5">
+                <div class="icon icon-warning">
+                    <i class="tim-icons icon-wifi"></i>
+                </div>
+                <div class="description">
+                    <h3 class="info-title">{{ __('Covid-19 Guidlines') }}</h3>
+                    <p class="description">
+                        {{ __('Observe the SOP\'s') }}
+                    </p>
+                </div>
+            </div>
+            <div class="info-area info-horizontal">
+                <div class="icon icon-primary">
+                    <i class="tim-icons icon-triangle-right-17"></i>
+                </div>
+                <div class="description">
+                    <h3 class="info-title">{{ __('Fully Accessible From anywhere') }}</h3>
+                    <p class="description">
+                        {{ __('We\'ve developed the website with HTML5 and CSS3. The client has access to the code using GitHub.') }}
+                    </p>
+                </div>
+            </div>
+            <div class="info-area info-horizontal">
+                <div class="icon icon-info">
+                    <i class="tim-icons icon-trophy"></i>
+                </div>
+                <div class="description">
+                    <h3 class="info-title">{{ __('Approved by WHO') }}</h3>
+                    <p class="description">
+                        {{ __('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
+                    </p>
                 </div>
             </div>
         </div>
-    </>
-    
+        <div class="col-md-7 mr-auto">
+            <div class="card card-register card-white">
+                <div class="card-header">
+                    {{-- <img class="card-img img-fluid" src="https://media4.newsnationtv.com/resize/930_-/images/2020/04/03/covid19poster-203.jpg" alt="Card image"> --}}
+                    <h4 class="card-title text-center text-primary m-5 p-3">{{ __('Register') }}</h4>
+                </div>
+                <form class="form" method="post" action="{{ route('register') }}">
+                    @csrf
 
+                    <div class="card-body">
+                        <div class="input-group mt-0{{ $errors->has('name') ? ' has-danger' : '' }}">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-single-02"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}">
+                            @include('alerts.feedback', ['field' => 'name'])
+                        </div>
+                        <div class="input-group mt-5{{ $errors->has('email') ? ' has-danger' : '' }}">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-email-85"></i>
+                                </div>
+                            </div>
+                            <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}">
+                            @include('alerts.feedback', ['field' => 'email'])
+                        </div>
+                        <div class="input-group mt-5{{ $errors->has('password') ? ' has-danger' : '' }}">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-lock-circle"></i>
+                                </div>
+                            </div>
+                            <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}">
+                            @include('alerts.feedback', ['field' => 'password'])
+                        </div>
+                        <div class="input-group mt-5">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-lock-circle"></i>
+                                </div>
+                            </div>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="{{ __('Confirm Password') }}">
+                        </div>
+                        <div class="form-check text-left">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-sign"></span>
+                                {{ __('I agree to the') }}
+                                <a href="#">{{ __('terms and conditions') }}</a>.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex flex-column">
+                        <button type="submit" class="btn btn-primary btn-round btn-lg">{{ __('Register') }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    @endsection
+@endsection
