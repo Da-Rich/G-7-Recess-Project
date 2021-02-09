@@ -15,7 +15,7 @@
             <div class="card card-login card-white ">
                 <div class="card-header">
                     <img class = "mb-5" src="https://images.benefitspro.com/contrib/content/uploads/sites/412/2020/04/coronavirus-and-cells-and-people-faces.jpg" alt="">
-                    <h1 class="card-title text-center" >{{ __('Log in') }}</h1>
+                    <h1 class="card-title text-center">{{ __('Log in') }}</h1>
                 </div>
                 <div class="card-body mt-5">
                     <p class="text-dark mb-2">Sign in with <strong>admin@black.com</strong> and the password <strong>secret</strong></p>

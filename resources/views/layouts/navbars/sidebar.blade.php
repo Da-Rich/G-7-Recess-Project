@@ -1,17 +1,23 @@
-<style>
+
+ <style>
     .sidebar-wrapper{
         background-color: purple !important;
         left:0;
     }
 </style>
+{{Auth::user()->role != 'director'}}
 <div class="sidebar ">
     <div class="sidebar-wrapper">
         <div class="logo">
             {{-- <a href="#" class="simple-text logo-mini">{{ __('BD') }}</a> --}}
             <a href="#" class="simple-text logo-normal">{{ __() }}</a>
+
+
         </div>
+
         <ul class="nav">
-            {{-- <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif> --}}
+
+             <li>
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>{{ __('Dashboard') }}</p>
@@ -26,12 +32,7 @@
 
                 <div class="collapse show" id="register">
                     <ul class="nav pl-4">
-                        <li>
-                            <a href="{{ route('profile.edit')  }}">
-                                <i class="tim-icons icon-single-02"></i>
-                                <p>{{ __('User Profile') }}</p>
-                            </a>
-                        </li>
+
                         <li>
                             <a href="{{ route('registerDonation')  }}">
                                 <i class="tim-icons icon-coins"></i>
@@ -65,19 +66,19 @@
     <div class="collapse show" id="graphs">
         <ul class="nav pl-4">
             <li>
-                <a href="{{ route('profile.edit')  }}">
+                <a href="{{ route('charts')  }}">
                     <i class="tim-icons icon-single-02"></i>
                     <p>{{ __('Donations Graphs') }}</p>
                 </a>
             </li>
             <li>
-                <a href="{{ route('registerDonation')  }}">
+                <a href="{{ route('hierarchy')  }}">
                     <i class="tim-icons icon-coins"></i>
                     <p>{{ __('Hierarchy') }}</p>
                 </a>
             </li>
             <li>
-                <a href="{{ route('registerOfficer')  }}">
+                <a href="{{ route('enrollment')  }}">
                     <i class="tim-icons icon-single-02"></i>
                     <p>{{ __('Enrollment Change') }}</p>
                 </a>
@@ -101,42 +102,30 @@
                     <p>{{ __('Icons') }}</p>
                 </a>
             </li>
-             <li>
+             {{-- <li>
                 <a href="{{ route('charts') }}">
                     <i class="tim-icons icon-pin"></i>
-                    <p>{{ __('Maps') }}</p>
+                    <p>{{ __('Charts') }}</p>
                 </a>
-            </li>
-            <li>
+            </li> --}}
+            {{-- <li>
                 <a href="{{ route('pages.notifications') }}">
                     <i class="tim-icons icon-bell-55"></i>
                     <p>{{ __('Notifications') }}</p>
                 </a>
-            </li>
+            </li> --}}
             <li>
-                <a href="{{ route('pages.tables') }}">
+                <a href="{{ route('tables') }}">
                     <i class="tim-icons icon-puzzle-10"></i>
-                    <p>{{ __('Table List') }}</p>
+                    <p>{{ __('Tables') }}</p>
                 </a>
             </li>
             <li>
-                <a href="{{ route('pages.typography') }}">
+                <a href="{{ route('payments') }}">
                     <i class="tim-icons icon-align-center"></i>
-                    <p>{{ __('Typography') }}</p>
+                    <p>{{ __('Money Distrution') }}</p>
                 </a>
             </li>
-            {{-- <li @if ($pageSlug ?? '' == 'rtl') class="active " @endif>
-                <a href="{{ route('pages.rtl') }}">
-                    <i class="tim-icons icon-world"></i>
-                    <p>{{ __('RTL Support') }}</p>
-                </a>
-            </li> --}}
-            {{-- <li class=" {{ $pageSlug ?? '' == 'upgrade' ? 'active' : '' }} bg-info">
-                <a href="{{ route('pages.upgrade') }}">
-                    <i class="tim-icons icon-spaceship"></i>
-                    <p>{{ __('Upgrade to PRO') }}</p>
-                </a>
-            </li> --}}
         </ul>
     </div>
 </div>

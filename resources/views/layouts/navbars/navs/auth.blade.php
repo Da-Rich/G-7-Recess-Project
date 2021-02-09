@@ -30,7 +30,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navigation">
                 <div class="mr-auto text-primary">
-                   Hello Uganda
+                   <h1 style="margin:0; color: white;">Hello Uganda</h1>
                 </div>
                 <ul class="navbar-nav ml-auto">
                     {{-- <li class="search-bar input-group"> --}}
@@ -40,8 +40,8 @@
                     {{-- </li> --}}
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <div class="notification d-none d-lg-block d-xl-block"></div>
-                            <i class="tim-icons icon-sound-wave"></i>
+                            Notifications{{-- <div class="notification d-none d-lg-block d-xl-block"></div> --}}
+                            <i class="tim-icons icon-bell-55" ><sup style="color: white;">4</sup></i>
                             <p class="d-lg-none"> {{ __('Notifications') }} </p>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
@@ -74,9 +74,9 @@
                             <li class="nav-link">
                                 <a href="{{ route('profile.edit') }}" class="nav-item dropdown-item">{{ __('Profile') }}</a>
                             </li>
-                            <li class="nav-link">
+                            {{-- <li class="nav-link">
                                 <a href="#" class="nav-item dropdown-item">{{ __('Settings') }}</a>
-                            </li>
+                            </li> --}}
                             <li class="dropdown-divider"></li>
                             <li class="nav-link">
                                 <a href="{{ route('logout') }}" class="nav-item dropdown-item" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">{{ __('Log out') }}</a>

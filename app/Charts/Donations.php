@@ -15,13 +15,16 @@ class Donations extends BaseChart
      * It must always return an instance of Chartisan
      * and never a string or an array.
      */
-    public function handler(Request $request): Chartisan
+
+     public function handler(Request $request): Chartisan
     {
+
+
         $donations = DB::table('donations')->get();
 
         return Chartisan::build()
             ->labels($this->donors_names($donations))
-            ->dataset('gee', $this->donation_amount($donations));
+            ->dataset('money', $this->donation_amount($donations));
     }
 
 

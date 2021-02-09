@@ -2,12 +2,12 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h5 class="title">{{ __('Register Officer') }}</h5>
+        <h1 class="title">{{ __('Register Health Officer') }}</h1>
     </div>
     <form method="post" action="{{ route('registerOfficer') }}" autocomplete="off">
         <div class="card-body">
             @csrf
-
+            @include('alerts.success')
 
             <div class="form-group">
                 <label>{{ __('Officer Name') }}</label>

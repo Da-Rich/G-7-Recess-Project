@@ -18,7 +18,6 @@ class CreateDonationsTable extends Migration
             $table->string('donor_name');
             $table->string('amount');
             $table->string('date');
-            $table->timestamps();
         });
     }
 

@@ -7,7 +7,7 @@
     <form method="post" action="{{ route('registerHospital') }}" autocomplete="off">
         <div class="card-body">
             @csrf
-
+            @include('alerts.success')
 
             <div class="form-group">
                 <label>{{ __('Hospital Name') }}</label>

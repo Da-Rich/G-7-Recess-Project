@@ -65,7 +65,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-4">
+        {{-- <div class="col-md-4">
             <div class="card card-user">
                 <div class="card-body">
                     <p class="card-text">
@@ -75,8 +75,8 @@
                             <div class="block block-three"></div>
                             <div class="block block-four"></div>
                             <a href="#">
-                                <img class="avatar" src="{{ asset('black') }}/img/emilyz.jpg" alt="">
-                                <h5 class="title">{{ auth()->user()->name }}</h5>
+                                <img class="avatar" src="{{ asset('black') }}/img/emilyz.jpg" alt=""> --}}
+                                {{-- <h5 class="title">{{ auth()->user()->name }}</h5>
                             </a>
                             <p class="description">
                                 {{ __('Ceo/Co-Founder') }}
@@ -102,5 +102,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection

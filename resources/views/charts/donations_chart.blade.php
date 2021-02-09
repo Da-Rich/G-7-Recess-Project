@@ -9,7 +9,16 @@
   {{-- <body> --}}
     <!-- Chart's container -->
     @section('content')
-    <div id="chart" style="height: 200px; background: rgba(11, 223, 75, 0.212);"></div>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header">
+              <h1 class="card-title"> Donations vs Donors graph  </h1>
+            </div>
+            <div class="card-body">
+              <div class="table">
+
+    <div id="chart" style="height: 400px; background: rgba(231, 240, 233, 0.212);"></div>
     <!-- Charting library -->
     <script src="https://unpkg.com/chart.js@2.9.3/dist/Chart.min.js"></script>
     <!-- Chartisan -->
@@ -27,8 +36,8 @@
             .datasets([{type:"bar",
             backgroundColor: "blue",
             hoverBackgroundColor: "white",
-            minBarLength:1,
-            barPercentage: 0.8
+            minBarLength:10,
+            barPercentage: 1
         }])
 
 
@@ -36,6 +45,10 @@
       });
 
     </script>
+    </div>
+</div>
+</div>
+</div>
     @endsection
   {{-- </body> --}}
 {{-- </html> --}}

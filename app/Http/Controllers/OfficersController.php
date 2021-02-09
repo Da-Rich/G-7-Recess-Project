@@ -35,8 +35,20 @@ class OfficersController extends Controller
        usort($new, function($first,$second){
             return $first['total'] <=> $second['total'];
        });
-
-       $hospital_id = $new[0]['hospital_id'];
+       //dd($new);
+       if(isset($new[0])){
+           if($new[0]['total']==15){
+            return back()->withStatus(__('Registration failed, Please first
+            register a hospital of category General'));
+           }
+           else{
+                $hospital_id = $new[0]['hospital_id'];
+           }
+       }
+       else{
+        return back()->withStatus(__('Registration failed, Please first
+        register a hospital of category General'));
+       }
         //print_r($new);
 
 
@@ -49,8 +61,8 @@ class OfficersController extends Controller
 
         //('insert into officers ( office_name, job_role, hospital_id, username)
         //values (?, ?,?,?)', [$request->office_name, 'General', 89, $request->username]);
-        return redirect('/registerOfficer');
-
+        //return redirect('/officers');
+        return back()->withStatus(__('Health officer successfully registered.'));
     }
 
     public function show(){
@@ -71,25 +83,24 @@ class OfficersController extends Controller
           $hospitals = Hospital::all();
             foreach($my_array as $arr){
                 $hospital_ID = $arr['hospital_id'];
-                //echo $hospital_ID;
                 foreach($hospitals as $hospital){
                     if($hospital['hospital_id']==$hospital_ID){
                         $arr['hospital_name'] = $hospital['hospital_name'];
                         array_push($final,$arr);
-                        //echo "\nIts".$hospital['hospital_name']." ===".$hospital_ID;
                     }
                 }
             }
             return $final;
 
     }
+
     public function best_hospital(){
-        return DB::table('hospitals')->join('officers',
+        return DB::table('hospitals')->leftJoin('officers',
         'hospitals.hospital_id', '=', 'officers.hospital_id')
-            ->select('officers.hospital_id','hospitals.hospital_category',
+            ->select('hospitals.hospital_id','hospitals.hospital_category',
             DB::raw('count(officers.hospital_id) as total'))
-            ->where('hospitals.hospital_category','=', 'general')
-            ->groupBy('officers.hospital_id','hospitals.hospital_category')->get();
+            ->where('hospitals.hospital_category','=', 'General')
+            ->groupBy('hospitals.hospital_id','hospitals.hospital_category')->get();
 
 
     }

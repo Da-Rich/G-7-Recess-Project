@@ -13,9 +13,15 @@ class CreatePromotionsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('promotions', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('promotion_id');
+            $table->integer('officer_id');
+            $table->date('date')->default(now());
+            $table->integer('hospital_id');
+            $table->integer('payment_id');
+            $table->string('status');
+
         });
     }
 

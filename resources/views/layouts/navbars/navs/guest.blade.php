@@ -6,7 +6,7 @@
 
     }
     .navbar.navbar-expand-lg.navbar-absolute.navbar-transparent.fixed-top {
-    background-color: purple !important;
+    background-color: rgb(100, 128, 0) !important;
     }
 
 </style>
@@ -24,7 +24,9 @@
                         <span class="navbar-toggler-bar bar3"></span>
                     </button>
                 </div>
-                <a class="navbar-brand mb-0 " href="#">{{ $page ?? 'CoCaRS Ug' }}</a>
+                <h1 style="margin:0; color: white;">
+                    {{-- <img src = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Coat_of_arms_of_Uganda.svg" style="height:50px"> --}}
+                    CoCaRS Uganda</h1>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar navbar-kebab"></span>

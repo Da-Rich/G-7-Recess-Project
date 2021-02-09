@@ -15,12 +15,12 @@ class CreateOfficersTable extends Migration
     {
         Schema::create('officers', function (Blueprint $table) {
             $table->bigIncrements('officer_id');
-            $table->string('office_name');
+            $table->string('officer_name');
             $table->string('job_role')->default('general');
             $table->integer('hospital_id');
-            $table->string('salary')->default('300000');
+            $table->string('salary')->default('null');
             $table->string('username')->unique();
-            $table->timestamps();
+
         });
     }
 

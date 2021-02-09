@@ -3,7 +3,7 @@
 declare(strict_types = 1);
 
 namespace App\Charts;
-
+use Illuminate\Support\Facades\DB;
 use Chartisan\PHP\Chartisan;
 use ConsoleTVs\Charts\BaseChart;
 use Illuminate\Http\Request;
@@ -22,4 +22,5 @@ class DonationsMonths extends BaseChart
             ->dataset('Sample', [1, 2, 3])
             ->dataset('Sample 2', [3, 2, 1]);
     }
+
 }

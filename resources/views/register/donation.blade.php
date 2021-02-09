@@ -2,13 +2,13 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h5 class="title">{{ __('Register Donnation') }}</h5>
+        <h1 class="title">{{ __('Register Donnation') }}</h1>
     </div>
     <form method="post" action="{{ route('registerDonation') }}" autocomplete="off">
         <div class="card-body">
             @csrf
 
-
+            @include('alerts.success')
             <div class="form-group">
                 <label>{{ __('Donor Name') }}</label>
                 <input type="text" name="donor_name" class="form-control" placeholder="{{ __('Name of Donor') }}" value="" required>

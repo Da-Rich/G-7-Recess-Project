@@ -14,12 +14,11 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('patient_id');
             $table->string('name');
             $table->date('date');
             $table->string('gender');
-            //totandikila wano
-            $table->timestamps();
+            $table->string('officer');
         });
     }
 

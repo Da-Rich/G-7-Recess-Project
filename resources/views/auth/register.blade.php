@@ -8,7 +8,7 @@
                     <i class="tim-icons icon-wifi"></i>
                 </div>
                 <div class="description">
-                    <h3 class="info-title">{{ __('Covid-19 Guidlines') }}</h3>
+                    <h1 class="info-title">{{ __('Spread the Covid-19 Message') }}</h1>
                     <p class="description">
                         {{ __('Observe the SOP\'s') }}
                     </p>
@@ -21,7 +21,7 @@
                 <div class="description">
                     <h3 class="info-title">{{ __('Fully Accessible From anywhere') }}</h3>
                     <p class="description">
-                        {{ __('We\'ve developed the website with HTML5 and CSS3. The client has access to the code using GitHub.') }}
+                        {{ __('This system is at your service 24/7. Access it from anywhere around the world.') }}
                     </p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="description">
                     <h3 class="info-title">{{ __('Approved by WHO') }}</h3>
                     <p class="description">
-                        {{ __('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
+                        {{ __('Analyze everthing professionally') }}
                     </p>
                 </div>
             </div>
@@ -64,6 +64,17 @@
                             </div>
                             <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}">
                             @include('alerts.feedback', ['field' => 'email'])
+                        </div>
+                        <div class="input-group mt-5">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-shape-star"></i>
+                                </div>
+                            </div>
+                            <select name="role" class="form-control">
+                                <option value="admin">Administrator</option>
+                                <option value="director">Director</option>
+                            </select>
                         </div>
                         <div class="input-group mt-5{{ $errors->has('password') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
@@ -98,4 +109,5 @@
             </div>
         </div>
     </div>
+
 @endsection
